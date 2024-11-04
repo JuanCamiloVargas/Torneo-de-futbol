@@ -1,0 +1,34 @@
+{
+    "jugadores": [
+        {
+            "id": "JUG1",
+            "nombre": "Migsasasuel",
+            "numero": "4",
+            "posicion": "Defensa",
+            "equipo_id": "EQP1",
+            "estadisticas": {
+                "partidos": 1,
+                "goles": 0,
+                "asistencias": 0,
+                "tarjetas_amarillas": 0,
+                "tarjetas_rojas": 0,
+                "minutos_jugados": 0
+            }
+        },
+        {
+            "id": "JUG2",
+            "nombre": "Migsasasuel",
+            "numero": "4",
+            "posicion": "Defensa",
+            "equipo_id": "EQP100",
+            "estadisticas": {
+                "partidos": 0,
+                "goles": 0,
+                "asistencias": 0,
+                "tarjetas_amarillas": 0,
+                "tarjetas_rojas": 0,
+                "minutos_jugados": 0
+            }
+        }
+    ]
+}

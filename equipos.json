@@ -1,0 +1,38 @@
+{
+    "equipos": [
+        {
+            "id": "EQP1",
+            "nombre": "Once Caldas",
+            "ciudad": "Manizales",
+            "dt": "Miguel Alzate",
+            "jugadores": [
+                "JUG1"
+            ],
+            "estadisticas": {
+                "puntos": 10,
+                "partidos_jugados": 0,
+                "ganados": 0,
+                "emapatados": 0,
+                "perdidos": 0,
+                "goles_favor": 0,
+                "goles_contra": 0
+            }
+        },
+        {
+            "id": "EQP2",
+            "nombre": "Nacional",
+            "ciudad": "Medell�n",
+            "dt": "Efra�n juarez",
+            "jugadores": [],
+            "estadisticas": {
+                "puntos": 0,
+                "partidos_jugados": 0,
+                "ganados": 0,
+                "emapatados": 0,
+                "perdidos": 0,
+                "goles_favor": 0,
+                "goles_contra": 0
+            }
+        }
+    ]
+}

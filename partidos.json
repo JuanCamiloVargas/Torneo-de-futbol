@@ -1,0 +1,25 @@
+{
+    "partidos": [
+        {
+            "id": "PAR1",
+            "fecha": "2024-10-11",
+            "id_arbitro": null,
+            "equipo_local": "EQP1",
+            "equipo_visitante": "EQP2",
+            "goles_local": 3,
+            "goles_visitante": 1,
+            "alineacion_local": [
+                "JUG1"
+            ],
+            "alineacion_visitante": [],
+            "eventos": [
+                {
+                    "minuto": 30,
+                    "tipo": "",
+                    "jugador": "JUG001",
+                    "equipo": "EQP001"
+                }
+            ]
+        }
+    ]
+}
