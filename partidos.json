@@ -6,7 +6,7 @@
             "id_arbitro": null,
             "equipo_local": "EQP1",
             "equipo_visitante": "EQP2",
-            "goles_local": 3,
+            "goles_local": 10,
             "goles_visitante": 1,
             "alineacion_local": [
                 "JUG1"
@@ -14,10 +14,10 @@
             "alineacion_visitante": [],
             "eventos": [
                 {
-                    "minuto": 30,
-                    "tipo": "",
-                    "jugador": "JUG001",
-                    "equipo": "EQP001"
+                    "minuto": 10,
+                    "tipo": "Tarjeta roja",
+                    "jugador": "JUG1",
+                    "equipo": "EQP1"
                 }
             ]
         }

@@ -77,4 +77,4 @@ def actualizar_estadisticas(id: str, estadisticas: dict):
 
     return "Estadísticas actualizadas satisfactoriamente"
 
-# print(actualizar_estadisticas("JUG1", {"partidos": 1}))
+print(actualizar_estadisticas("JUG1", {"partidos": 10}))

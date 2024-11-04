@@ -1,6 +1,6 @@
 import json
 
-def registrar_partido(fecha: str, equipo_local_id: str, equipo_visitante_id: str, goles_local: int, goles_visitante: int):
+def registrar_partido(fecha: str, equipo_local_id: str, equipo_visitante_id: str):
     with open("equipos.json", "r", encoding="utf-8") as archivo:
         file = json.load(archivo)
 
@@ -20,6 +20,10 @@ def registrar_partido(fecha: str, equipo_local_id: str, equipo_visitante_id: str
     with open("partidos.json", "r", encoding="utf-8") as archivo:
         file = json.load(archivo)
 
+    for i in file["partidos"]:
+        if i["fecha"] == fecha and i["equipo_local"] == equipo_local_id and i["equipo_visitante"] == equipo_visitante_id:
+            return "El partido ya existe"
+
     if file["partidos"]:
         lastId = int(file["partidos"][-1]["id"].replace("PAR", ""))
         currentId = lastId + 1
@@ -32,8 +36,8 @@ def registrar_partido(fecha: str, equipo_local_id: str, equipo_visitante_id: str
         "id_arbitro": None,
         "equipo_local": equipo_local["id"],  
         "equipo_visitante": equipo_visitante["id"], 
-        "goles_local": goles_local,  
-        "goles_visitante": goles_visitante, 
+        "goles_local": 0,  
+        "goles_visitante": 0, 
         "alineacion_local": equipo_local["jugadores"],  
         "alineacion_visitante": equipo_visitante["jugadores"],
         "eventos": [  
@@ -68,3 +72,67 @@ def buscar_partido(criterio: str, valor: str) -> list:
 # print(actualizar_estadisticas("EQP1", {"asdasdasd": 10}))
 
 # print(buscar_partido("fecha", "2024-10-11"))
+
+# print(registrar_partido("2024-10-11", "EQP1", "EQP2", 10, 2))
+
+def actualizar_resultados(id: str, goles_local: int, goles_visitante: int):
+    if goles_local < 0 or goles_visitante < 0:
+        return "Los goles no pueden ser negativos"
+    
+    with open("partidos.json", "r", encoding="utf-8") as archivo:
+        file = json.load(archivo)
+
+    for i in file["partidos"]:
+        if i["id"] == id:
+            partido = i
+
+    partido["goles_local"] = goles_local
+    partido["goles_visitante"] = goles_visitante
+
+    with open("partidos.json", "w", encoding="utf-8") as archivo:
+        json.dump(file, archivo, ensure_ascii=False, indent=4)
+
+    return "Partido actualizado correctamente"
+
+# print(actualizar_resultados("PAR1", 10, 1))
+
+def agregar_eventos(id: int, eventos: dict):
+    with open("partidos.json", "r", encoding="utf-8") as archivo:
+       file = json.load(archivo)
+
+    for i in file["partidos"]:
+        if i["id"] == id:
+            partido = i
+        else:
+            return "El partido no existe"
+        
+    if partido["equipo_local"] != eventos["equipo"]:
+        if partido["equipo_visitante"] != eventos["equipo"]:
+            return "El equipo no existe en este partido"
+        
+    jugador = None
+
+    for i in partido["alineacion_local"]:
+        if i == eventos["jugador"]:
+            jugador = i
+
+    for i in partido["alineacion_visitante"]:
+        if i == eventos["jugador"]:
+            jugador = i
+
+    if jugador == None:
+        return "El jugador no existe en este partido"
+
+    partido["eventos"].append(eventos)
+
+    with open("partidos.json", "w", encoding="utf-8") as archivo:
+        json.dump(file, archivo, ensure_ascii=False, indent=4)
+
+    return "Eventos agregados correctamente"
+
+# print(agregar_eventos("PAR1", {
+#                     "minuto": 10,
+#                     "tipo": "Tarjeta roja",
+#                     "jugador": "JUG1",
+#                     "equipo": "EQP1"
+#                 }))
