@@ -3,7 +3,7 @@
         {
             "id": "PAR1",
             "fecha": "2024-10-11",
-            "id_arbitro": null,
+            "id_arbitro": "ARB2",
             "equipo_local": "EQP1",
             "equipo_visitante": "EQP2",
             "goles_local": 10,

@@ -1,0 +1,18 @@
+{
+  "arbitros": [
+    {
+      "id": "ARB1",
+      "nombre": "HELLO",
+      "experiencia": 5,
+      "categoria": "FIFA",
+      "partidos_dirigidos": 0
+    },
+    {
+      "id": "ARB2",
+      "nombre": "Carlos",
+      "experiencia": 5,
+      "categoria": "FIFA",
+      "partidos_dirigidos": 1
+    }
+  ]
+}
