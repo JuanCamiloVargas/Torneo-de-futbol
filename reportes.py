@@ -30,7 +30,10 @@ def generar_lista_goleadores(top: int = 10) -> list:
         })
     
     
-    goleadores_top = sorted(goleadores, key=lambda jugador: jugador["goles"], reverse=True)[:top]
+    goleadores_top = sorted(
+        goleadores, 
+        key=lambda jugador: jugador["goles"],
+        reverse=True)[:top]
     
     return goleadores_top
 
@@ -42,17 +45,21 @@ def generar_estadisticas_equipo(id_equipo: str) -> dict:
     with open("jugadores.json", "r", encoding="utf-8") as archivo_jugadores:
         jugadores_file = json.load(archivo_jugadores)
 
-    equipo = next((eq for eq in equipos_file["equipos"] if eq["id"] == id_equipo), None)
-    
-    if not equipo:
-        return {"error": "El equipo no existe"}
+    equipo = None
+
+    for i in equipos_file["equipos"]:
+        if i["id"] == id_equipo:
+            equipo = i
+
+    if equipo == None:
+        return "El equipo no existe"
 
     jugadores_equipo = [
         jugador for jugador in jugadores_file["jugadores"] if jugador["equipo_id"] == id_equipo
     ]
     
     puntos_obtenidos = equipo["estadisticas"]["puntos"]
-    puntos_disponibles = equipo["estadisticas"]["partidos_jugados"] * 3  # Se asume 3 puntos por partido
+    puntos_disponibles = equipo["estadisticas"]["partidos_jugados"] * 3
     rendimiento = (puntos_obtenidos / puntos_disponibles) if puntos_disponibles > 0 else 0
     
     
