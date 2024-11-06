@@ -1,0 +1,100 @@
+{
+    "tabla_posiciones": [
+        {
+            "id": "EQP1",
+            "nombre": "Once Caldas",
+            "ciudad": "Manizales",
+            "dt": "Miguel Alzate",
+            "jugadores": [
+                "JUG1"
+            ],
+            "estadisticas": {
+                "puntos": 10,
+                "partidos_jugados": 0,
+                "ganados": 0,
+                "emapatados": 0,
+                "perdidos": 0,
+                "goles_favor": 0,
+                "goles_contra": 0
+            }
+        },
+        {
+            "id": "EQP2",
+            "nombre": "Nacional",
+            "ciudad": "Medell�n",
+            "dt": "Efra�n juarez",
+            "jugadores": [],
+            "estadisticas": {
+                "puntos": 0,
+                "partidos_jugados": 0,
+                "ganados": 0,
+                "emapatados": 0,
+                "perdidos": 0,
+                "goles_favor": 0,
+                "goles_contra": 0
+            }
+        }
+    ],
+    "goleadores": [
+        {
+            "nombre": "Migsasasuel",
+            "equipo_id": "EQP1",
+            "goles": 0
+        },
+        {
+            "nombre": "Migsasasuel",
+            "equipo_id": "EQ2",
+            "goles": 0
+        }
+    ],
+    "estadisticas_equipos": [
+        {
+            "nombre": "Once Caldas",
+            "ciudad": "Manizales",
+            "dt": "Miguel Alzate",
+            "estadisticas": {
+                "puntos": 10,
+                "partidos_jugados": 0,
+                "ganados": 0,
+                "emapatados": 0,
+                "perdidos": 0,
+                "goles_favor": 0,
+                "goles_contra": 0
+            },
+            "rendimiento": 0,
+            "jugadores": [
+                {
+                    "id": "JUG1",
+                    "nombre": "Migsasasuel",
+                    "numero": "4",
+                    "posicion": "Defensa",
+                    "equipo_id": "EQP1",
+                    "estadisticas": {
+                        "partidos": 10,
+                        "goles": 0,
+                        "asistencias": 0,
+                        "tarjetas_amarillas": 0,
+                        "tarjetas_rojas": 0,
+                        "minutos_jugados": 0
+                    }
+                }
+            ]
+        },
+        {
+            "nombre": "Nacional",
+            "ciudad": "Medell�n",
+            "dt": "Efra�n juarez",
+            "estadisticas": {
+                "puntos": 0,
+                "partidos_jugados": 0,
+                "ganados": 0,
+                "emapatados": 0,
+                "perdidos": 0,
+                "goles_favor": 0,
+                "goles_contra": 0
+            },
+            "rendimiento": 0,
+            "jugadores": []
+        }
+    ]
+}
